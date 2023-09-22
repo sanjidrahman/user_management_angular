@@ -1,0 +1,25 @@
+<div class="wrapper" style="margin-top: 195px;">
+    <!-- <div class="logo">
+        <img src="https://www.freepnglogos.com/uploads/twitter-logo-png/twitter-bird-symbols-png-logo-0.png" alt="">
+    </div> -->
+    <div class="text-center mt-5 name">
+        Admin
+    </div>
+    <form class="p-3 mt-3" [formGroup]="adminLogin" (submit)="onSubmit()" >
+        <div class="form-field d-flex align-items-center">
+            <span class="far fa-user"></span>
+            <input type="text" formControlName="email" placeholder="Email">
+        </div>
+        <p *ngIf="user.email.errors.required" class="text-danger">email is required</p>
+        <p *ngIf="user.email.errors.email" class="text-danger">invalid email</p>
+
+        <div class="form-field d-flex align-items-center">
+            <span class="fas fa-key"></span>
+            <input type="password" formControlName="password" placeholder="Password">
+        </div>
+
+        <p *ngIf="user.password.errors.required" class="text-danger">password required</p>
+
+        <button class="btn mt-3">Login</button>
+    </form>
+</div>

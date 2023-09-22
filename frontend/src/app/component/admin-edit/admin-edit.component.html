@@ -1,0 +1,28 @@
+<app-admin-nav></app-admin-nav>
+
+<div class="container">
+    <div class="card mt-5">
+        <div class="card-header">
+            <h2>Edit user</h2>
+        </div>
+        <div class="card-body">
+            <div class="modal-body">
+                <form [formGroup]="editForm">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" [(ngModel)]="name" formControlName="name" placeholder="Enter your name" required>
+                    </div>
+                    <input type="hidden" class="form-control" [(ngModel)]="id" formControlName="id">
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" [(ngModel)]="email" formControlName="email" readonly>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" (click)="redirect()" class="btn btn-secondary me-2">Close</button>
+                <button type="button" (click)="onSubmit()" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
